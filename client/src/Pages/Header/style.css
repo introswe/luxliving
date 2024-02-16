@@ -34,13 +34,15 @@ body {
       font-weight: 300; 
       text-transform: uppercase; 
       letter-spacing: 5px; 
+      cursor: pointer; 
+      transition: color 0.3s ease;
   }
     
   .logo .lux {
       font-weight: 700; 
       color: #000; 
   }
-    
+
   .search-and-actions {
     display: flex;
     align-items: center;
