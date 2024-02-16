@@ -22,6 +22,18 @@ const Header = () => {
     navigate('/account');
   };
 
+  const goToLogin = () => {
+    navigate('/login');
+  };
+
+  const goToOrders = () => {
+    navigate('/orders');
+  };
+
+  const goToCart = () => {
+    navigate('/cart');
+  };
+
   return (
     <div className="header-layout">
       <header className="header-title">
@@ -31,9 +43,9 @@ const Header = () => {
         </div>
         <div className="search-and-actions">
           <input type="text" placeholder="Search LUXLIVING" className="search-bar" />
-          <button className="login-button">Sign in</button>
-          <button className="account-button">Orders</button>
-          <button className="cart-button">Cart</button>
+          <button className="login-button" onClick={goToLogin}>Sign in</button>
+          <button className="account-button" onClick={goToOrders}>Orders</button>
+          <button className="cart-button" onClick={goToCart}>Cart</button>
         </div>
       </header>
       {isSidebarOpen && (
