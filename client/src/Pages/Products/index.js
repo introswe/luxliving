@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Layout from '../Layout';
 
-function Page1() {
+function ProductsPage() {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:3001/page1')
+        axios.get('http://localhost:3001/products')
             .then(response => {
                 setProducts(response.data);
             })
@@ -22,16 +23,18 @@ function Page1() {
     };
 
     return (
+        <Layout >
         <div>
-            <h1>Page 1</h1>
+            <h1>Products</h1>
             <ul>
                 {products.map(data => (
-                    <li key={data.id}>{data.name} - {data.description}</li>
+                    <li key={data.id} > {data.furniture_name} - {data.description}</li>
                 ))}
             </ul>
             <button onClick={goToHomePage}>Go to HomePage</button>
         </div>
+        </Layout>
     );
 }
 
-export default Page1;
+export default ProductsPage;

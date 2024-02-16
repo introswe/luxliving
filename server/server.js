@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 // Routes
 const homeRoute = require('./routes/home');
-const page1Route = require('./routes/page1'); 
+const productsRoute = require('./routes/products'); 
 
 // Use Routes
 app.use('/', homeRoute);
-app.use('/page1', page1Route);
+app.use('/products', productsRoute);
 
 // Starts Server
 app.listen(PORT, () => {
