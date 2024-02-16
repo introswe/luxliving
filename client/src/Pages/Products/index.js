@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import Layout from '../Layout';
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:3001/products')
@@ -17,11 +15,6 @@ function ProductsPage() {
             });
     }, []);
 
-    // Handler to navigate to Home Page
-    const goToHomePage = () => {
-        navigate('/');
-    };
-
     return (
         <Layout >
         <div>
@@ -31,7 +24,6 @@ function ProductsPage() {
                     <li key={data.id} > {data.furniture_name} - {data.description}</li>
                 ))}
             </ul>
-            <button onClick={goToHomePage}>Go to HomePage</button>
         </div>
         </Layout>
     );
