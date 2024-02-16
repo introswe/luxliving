@@ -12,11 +12,17 @@ app.use(bodyParser.json());
 const homeRoute = require('./routes/home');
 const productsRoute = require('./routes/products'); 
 const accountRoute = require('./routes/account'); 
+const loginRoute = require('./routes/login');
+const ordersRoute = require('./routes/orders');
+const cartRoute = require('./routes/cart');
 
 // Use Routes
 app.use('/', homeRoute);
 app.use('/products', productsRoute);
 app.use('/account', accountRoute);
+app.use('/login', loginRoute);
+app.use('/orders', ordersRoute);
+app.use('/cart', cartRoute);
 
 // Starts Server
 app.listen(PORT, () => {
