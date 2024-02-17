@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Authentication/AuthContext'; 
 import './style.header.css';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
-  
+  const { authToken, setAuthToken } = useAuth();
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -34,6 +36,13 @@ const Header = () => {
     navigate('/cart');
   };
 
+  const signout = () => {
+    localStorage.removeItem('authToken');
+    setAuthToken(null);
+    navigate('/'); 
+    toggleSidebar(); 
+  };
+
   return (
     <div className="header-layout">
       <header className="header-title">
@@ -43,8 +52,7 @@ const Header = () => {
         </div>
         <div className="search-and-actions">
           <input type="text" placeholder="Search LUXLIVING" className="search-bar" />
-          <button className="signin-button" onClick={goToLogin}>Sign in</button>
-          <button className="account-button" onClick={goToOrders}>Orders</button>
+          <button className="orders-button" onClick={goToOrders}>Orders</button>
           <button className="cart-button" onClick={goToCart}>Cart</button>
         </div>
       </header>
@@ -55,7 +63,11 @@ const Header = () => {
             <li onClick={goToHome}>Home</li>
             <li onClick={goToProducts}>Products</li>
             <li onClick={goToAccount}>Your Account</li>
-            <li>Sign out</li>
+            {authToken ? (
+              <li onClick={signout}>Sign Out</li>
+            ) : (
+              <li onClick={goToLogin}>Sign In</li>
+            )}
           </ul>
         </aside>
       )}
