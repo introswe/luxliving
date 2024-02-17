@@ -1,18 +1,23 @@
 const mysql = require('mysql2/promise');
 
-// Database configuration
 const dbConfig = {
     host: '34.133.137.184',
-    user: 'root', 
-    database: 'furniture' 
-  };
+    user: 'root',
+};
 
-// Creates connection pool 
-const pool = mysql.createPool(dbConfig);
+const pools = {};
 
-async function query(sql, params) {
+function getPool(database) {
+    if (!pools[database]) {
+        pools[database] = mysql.createPool({ ...dbConfig, database });
+    }
+    return pools[database];
+}
+
+async function query(database, sql, params) {
+    const pool = getPool(database);
     const [rows, fields] = await pool.execute(sql, params);
     return rows;
 }
 
-module.exports = {query};
+module.exports = { query };

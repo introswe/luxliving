@@ -20,7 +20,7 @@ body {
     width: 100%;
     max-width: 400px;
     border: 2px solid #ddd; 
-    transform: translateY(-20%); 
+    transform: translateY(20%); 
   }
   
   .signup-form h2 {
