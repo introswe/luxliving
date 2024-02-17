@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import './style.css';
+import './style.header.css';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,7 +43,7 @@ const Header = () => {
         </div>
         <div className="search-and-actions">
           <input type="text" placeholder="Search LUXLIVING" className="search-bar" />
-          <button className="login-button" onClick={goToLogin}>Sign in</button>
+          <button className="signin-button" onClick={goToLogin}>Sign in</button>
           <button className="account-button" onClick={goToOrders}>Orders</button>
           <button className="cart-button" onClick={goToCart}>Cart</button>
         </div>
