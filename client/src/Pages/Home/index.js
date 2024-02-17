@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 import Layout from '../Layout'; 
-import './style.css';
+import './style.home.css';
 
 const HomePage = () => {
   const [message,setMessage] = useState(null);
 
   useEffect(() => {
-      axios.get('http://localhost:3001/')
+      axiosInstance.get('/')
           .then(response => {
             setMessage(response.data);
           })

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../Layout'; 
-import './style.css';
+import './style.account.css';
 
 const AccountPage = () => {
     const [message,setMessage] = useState(null);

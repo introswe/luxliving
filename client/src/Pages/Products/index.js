@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../axiosConfig';
 import Layout from '../Layout';
+import './style.products.css';
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/products')
+        axiosInstance.get('/products')
             .then(response => {
                 setProducts(response.data);
             })

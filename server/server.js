@@ -15,6 +15,7 @@ const accountRoute = require('./routes/account');
 const loginRoute = require('./routes/login');
 const ordersRoute = require('./routes/orders');
 const cartRoute = require('./routes/cart');
+const signUpRoute = require('./routes/signup');
 
 // Use Routes
 app.use('/', homeRoute);
@@ -23,6 +24,7 @@ app.use('/account', accountRoute);
 app.use('/login', loginRoute);
 app.use('/orders', ordersRoute);
 app.use('/cart', cartRoute);
+app.use('/signup', signUpRoute);
 
 // Starts Server
 app.listen(PORT, () => {
