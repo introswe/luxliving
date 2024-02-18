@@ -3,8 +3,6 @@ const router = express.Router();
 const { query } = require('../database');
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'luxlivingsecret'; 
-
 // Route: Login
 router.post('/', async (req, res) => {
     const { email, password } = req.body;
@@ -14,7 +12,7 @@ router.post('/', async (req, res) => {
         const users = await query("users", sql, [email, password]);
 
         if (users.length > 0) {
-            const token = jwt.sign({ email: users[0].Email, userId: users[0].UserID }, JWT_SECRET);
+            const token = jwt.sign({ email: users[0].Email, userId: users[0].UserID }, process.env.JWT_SECRET);
             res.json({ message: 'Login successful', token: token }); 
         } else {
             res.status(401).json({ message: 'Login failed: User not found or password does not match.' });

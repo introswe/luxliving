@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+  }
+  
+  .account-page-wrapper {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    background-color: #ffffff; 
+  }
+  
+  .account-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 5px; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #ddd;
+    margin-top: -100px; 
+  }
+  
+  .account-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 300; 
+    letter-spacing: 1px; 
+    text-align: center; 
+  }
+  
+  .account-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666; 
+    font-size: 16px; 
+  }
+  
+  .account-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd; 
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); 
+    margin-bottom: 20px;
+    font-weight: 300; 
+    letter-spacing: 1px; 
+  }
+  
+  .save-button, .cancel-button, .edit-button {
+    width: auto; 
+    padding: 10px 15px; 
+    background-color: #fff; 
+    color: #333; 
+    border: 2px solid #ddd; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+    margin-top: 10px; 
+    align-self: center; 
+  }
+  
+  .save-button:hover, .cancel-button:hover, .edit-button:hover {
+    background-color: #eee; 
+  }
+  
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    align-items: center; 
+  }
