@@ -166,7 +166,7 @@ const SignUpPage = () => {
             />
         </div>
         <div className="signup-group">
-            <label htmlFor="code">Security Code</label>
+            <label htmlFor="code">CVV</label>
             <input
             type="text"
             id="code"
