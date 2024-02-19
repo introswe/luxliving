@@ -58,7 +58,7 @@ const FurnitureManager = () => {
 
     return (
         <Layout>
-            <h2 className="furniture-manager-title">Products for Sale</h2>
+            <h2 className="furniture-manager-title">My Products</h2>
             <div className="category-select">
                 <select value={selectedTable} onChange={e => setSelectedTable(e.target.value)}>
                     <option value="Bedroom">Bedroom</option>

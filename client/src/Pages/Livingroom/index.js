@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Layout from '../Layout'; 
-import './style.livingroom.css';
+import React from 'react';
+import FeedPage from '../Feed';;
+
 
 const LivingroomPage = () => {
-    const [message,setMessage] = useState(null);
+  return (
+    <FeedPage categoryPath="/livingroom" />
 
-    useEffect(() => {
-        axios.get('http://localhost:3003/livingroom')
-            .then(response => {
-              setMessage(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the orders:', error);
-            });
-    }, []);
-    return (
-      <Layout>
-        <p>{message ? message.message : 'Loading...'}</p>
-      </Layout>
-    );
-  };
+  );
+};
 
 export default LivingroomPage;
