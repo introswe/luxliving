@@ -7,7 +7,7 @@ const FurniturePage = () => {
     const [message,setMessage] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/furniture')
+        axios.get('http://localhost:3003/furniture')
             .then(response => {
               setMessage(response.data);
             })

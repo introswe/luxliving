@@ -7,7 +7,7 @@ const LivingroomPage = () => {
     const [message,setMessage] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/livingroom')
+        axios.get('http://localhost:3003/livingroom')
             .then(response => {
               setMessage(response.data);
             })

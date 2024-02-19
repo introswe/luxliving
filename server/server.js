@@ -4,13 +4,12 @@ const cors = require('cors');
 
 // Configures Application
 const app = express();
-const PORT = 3001;
+const PORT = 3003;
 app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
 const homeRoute = require('./routes/home');
-const productsRoute = require('./routes/products'); 
 const accountRoute = require('./routes/account'); 
 const loginRoute = require('./routes/login');
 const ordersRoute = require('./routes/orders');
@@ -24,7 +23,6 @@ const sellRoute = require('./routes/sell');
 
 // Use Routes
 app.use('/', homeRoute);
-app.use('/products', productsRoute);
 app.use('/account', accountRoute);
 app.use('/login', loginRoute);
 app.use('/orders', ordersRoute);
