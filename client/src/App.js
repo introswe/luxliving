@@ -12,6 +12,7 @@ import StoragePage from './Pages/Storage';
 import LivingroomPage from './Pages/Livingroom';
 import FurniturePage from './Pages/Furniture';
 import BedroomPage from './Pages/Bedroom';
+import SellPage from './Pages/Sell';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/furniture" element={<FurniturePage />} />
           <Route path="/livingroom" element={<LivingroomPage />} />
           <Route path="/storage" element={<StoragePage />} />
+          <Route path="/sell" element={<PrivateRoute element={<SellPage />} />} />
         </Routes>
       </Router>
     </AuthProvider>
