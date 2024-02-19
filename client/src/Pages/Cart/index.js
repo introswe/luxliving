@@ -7,7 +7,7 @@ const CartPage = () => {
     const [message,setMessage] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/cart')
+        axios.get('http://localhost:3003/cart')
             .then(response => {
               setMessage(response.data);
             })

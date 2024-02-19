@@ -53,3 +53,17 @@
     margin-top: 20px; 
     margin-bottom: 20px; 
   }
+  
+  .category-select {
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+  
+  .category-select select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }

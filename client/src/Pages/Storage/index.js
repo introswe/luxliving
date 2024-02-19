@@ -7,7 +7,7 @@ const StoragePage = () => {
     const [message,setMessage] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/storage')
+        axios.get('http://localhost:3003/storage')
             .then(response => {
               setMessage(response.data);
             })
