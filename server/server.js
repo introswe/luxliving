@@ -20,7 +20,7 @@ const signUpRoute = require('./routes/signup');
 // Use Routes
 app.use('/', homeRoute);
 app.use('/products', productsRoute);
-app.use('/account/', accountRoute);
+app.use('/account', accountRoute);
 app.use('/login', loginRoute);
 app.use('/orders', ordersRoute);
 app.use('/cart', cartRoute);
