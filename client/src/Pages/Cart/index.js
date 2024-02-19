@@ -1,26 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Layout from '../Layout'; 
-import './style.cart.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import { useCart } from './CartContext'; 
+import Layout from '../Layout';
+import './style.cart.css'; 
 
 const CartPage = () => {
-    const [message,setMessage] = useState(null);
+    const { cartItems, removeFromCart } = useCart();
+    const navigate = useNavigate(); 
 
-    useEffect(() => {
-        axios.get('http://localhost:3003/cart')
-            .then(response => {
-              setMessage(response.data);
-            })
-            .catch(error => {
-                console.error('There was an error fetching the orders:', error);
-            });
-    }, []);
+    const handleProceedToCheckout = () => {
+        navigate('/checkout'); 
+    };
+
     return (
       <Layout>
-        <h1>This is the Cart Page</h1>
-        <p>{message ? message.message : 'Loading...'}</p>
+        <div>
+            <h2>Your Cart</h2>
+            {cartItems.length > 0 ? (
+                <div className="cart-items">
+                    {cartItems.map(item => (
+                        <div key={item.id} className="cart-item">
+                            <img src={item.image} alt={item.title} style={{ maxWidth: '100px', height: 'auto', marginRight: '20px' }} />
+                            <div>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                                <p>Price: {item.price}</p>
+                                <button onClick={() => removeFromCart(item.id)}>Remove from Cart</button>
+                            </div>
+                        </div>
+                    ))}
+                    <button 
+                        className="proceed-to-checkout-btn" 
+                        onClick={handleProceedToCheckout}
+                        style={{ float: 'right', marginTop: '20px' }} 
+                    >
+                        Proceed to Checkout
+                    </button>
+                </div>
+            ) : (
+                <p>Your cart is empty.</p>
+            )}
+        </div>
       </Layout>
     );
-  };
+};
 
 export default CartPage;
