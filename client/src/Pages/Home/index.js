@@ -14,10 +14,10 @@ import featured3 from './images/featured3.jpg';
 import featured4 from './images/featured4.jpg';
 
 const featuredFurniture = [
-  { src: featured1, title: 'Bedrooms'}, 
-  { src: featured2, title: 'Furniture'},
-  { src: featured3, title: 'Living room'},
-  { src: featured4, title: 'Storage & Organization'},
+  { src: featured1, title: 'Bedrooms', path: '/bedroom' }, 
+  { src: featured2, title: 'Furniture', path: '/furniture' },
+  { src: featured3, title: 'Living Room', path: '/livingroom' },
+  { src: featured4, title: 'Storage & Organization', path: '/storage' },
 ];
 
 const images = [image1, image2, image3];
@@ -36,9 +36,9 @@ const HomePage = () => {
       pauseOnHover: true,
     };
 
-    const goToProducts = () => {
-      navigate('/products');
-    };
+    const handleNavigate = (path) => {
+      navigate(path);
+    };    
 
     return (
       <Layout>
@@ -54,7 +54,7 @@ const HomePage = () => {
       </div>
       <div className="featured-furniture">
         {featuredFurniture.map((item, index) => (
-            <div key={index} className="featured-item" onClick={goToProducts}>
+            <div key={index} className="featured-item" onClick={() => handleNavigate(item.path)}>
               <img src={item.src} alt={item.title} style={{cursor: 'pointer'}} />
               <p style={{cursor: 'pointer'}}>{item.title}</p> 
             </div>

@@ -15,11 +15,7 @@ const Header = () => {
   const goToHome = () => {
     navigate('/');
   };
-
-  const goToProducts = () => {
-    navigate('/products');
-  };
-
+  
   const goToAccount = () => {
     navigate('/account');
   };
@@ -34,6 +30,22 @@ const Header = () => {
 
   const goToCart = () => {
     navigate('/cart');
+  };
+
+  const goToBedroom = () => {
+    navigate('/bedroom');
+  };
+
+  const goToFurniture = () => {
+    navigate('/furniture');
+  };
+
+  const goToLivingroom = () => {
+    navigate('/livingroom');
+  };
+
+  const goToStorage = () => {
+    navigate('/storage');
   };
 
   const signout = () => {
@@ -61,7 +73,10 @@ const Header = () => {
           <button onClick={toggleSidebar} className="close-sidebar">X</button>
           <ul>
             <li onClick={goToHome}>Home</li>
-            <li onClick={goToProducts}>Products</li>
+            <li onClick={goToBedroom}>Bedroom</li>
+            <li onClick={goToFurniture}>Furniture</li>
+            <li onClick={goToLivingroom}>Living Room</li>
+            <li onClick={goToStorage}>Storage</li>
             <li onClick={goToAccount}>Your Account</li>
             {authToken ? (
               <li onClick={signout}>Sign Out</li>
