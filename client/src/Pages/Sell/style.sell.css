@@ -1,0 +1,55 @@
+.layout-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .furniture-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center; 
+  }
+  
+  .furniture-form input, .furniture-form button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .furniture-form button {
+    cursor: pointer;
+  }
+  
+  .furniture-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .furniture-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .furniture-item div, .furniture-item button {
+    margin: 5px 0;
+  }
+  
+  .furniture-item button {
+    align-self: center; 
+  }
+
+  .furniture-manager-title {
+    text-align: center; 
+    width: 100%; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+  }

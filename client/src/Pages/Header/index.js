@@ -48,6 +48,10 @@ const Header = () => {
     navigate('/storage');
   };
 
+  const goToSell = () => {
+    navigate('/sell');
+  };
+
   const signout = () => {
     localStorage.removeItem('authToken');
     setAuthToken(null);
@@ -77,6 +81,7 @@ const Header = () => {
             <li onClick={goToFurniture}>Furniture</li>
             <li onClick={goToLivingroom}>Living Room</li>
             <li onClick={goToStorage}>Storage</li>
+            <li onClick={goToSell}>Sell</li>
             <li onClick={goToAccount}>Your Account</li>
             {authToken ? (
               <li onClick={signout}>Sign Out</li>
