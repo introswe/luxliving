@@ -20,6 +20,7 @@ const furnitureRoute = require('./routes/furniture');
 const livingroomRoute = require('./routes/livingroom');
 const storageRoute = require('./routes/storage');
 const sellRoute = require('./routes/sell');
+const checkoutRoute = require('./routes/checkout');
 
 // Use Routes
 app.use('/', homeRoute);
@@ -33,6 +34,7 @@ app.use('/furniture', furnitureRoute);
 app.use('/livingroom', livingroomRoute);
 app.use('/storage', storageRoute);
 app.use('/sell', sellRoute);
+app.use('/checkout', checkoutRoute);
 
 // Starts Server
 app.listen(PORT, () => {

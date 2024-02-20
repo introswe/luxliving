@@ -78,10 +78,10 @@ const FurnitureManager = () => {
             <div className="furniture-list">
                 {furnitureItems.map(item => (
                     <div key={item.id} className="furniture-item">
-                        <div>Title: {item.title}</div>
+                        <div>{item.title}</div>
                         <img src={item.image} alt={item.title} />
-                        <div>Description: {item.description}</div>
-                        <div>Price: {item.price}</div>
+                        <div>{item.description}</div>
+                        <div>{item.price}</div>
                         <button onClick={() => handleEdit(item)}>Edit</button>
                         <button onClick={() => handleDelete(item.id)}>Delete</button>
                     </div>

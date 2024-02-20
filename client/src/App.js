@@ -14,6 +14,7 @@ import LivingroomPage from './Pages/Livingroom';
 import FurniturePage from './Pages/Furniture';
 import BedroomPage from './Pages/Bedroom';
 import SellPage from './Pages/Sell';
+import CheckoutPage from './Pages/Checkout';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/livingroom" element={<LivingroomPage />} />
             <Route path="/storage" element={<StoragePage />} />
             <Route path="/sell" element={<PrivateRoute element={<SellPage />} />} />
+            <Route path="/checkout" element={<PrivateRoute element={<CheckoutPage />} />} />
           </Routes>
         </CartProvider>
       </Router>
