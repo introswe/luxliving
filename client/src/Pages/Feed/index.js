@@ -24,7 +24,11 @@ const FeedPage = ({ categoryPath }) => {
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = furnitureItems.slice(indexOfFirstItem, indexOfLastItem);
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const paginate = pageNumber => {
+        setCurrentPage(pageNumber);
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    };
+    
 
     const isInCart = itemId => cartItems.some(item => item.id === itemId);
 
@@ -42,7 +46,7 @@ const FeedPage = ({ categoryPath }) => {
                         <img src={item.image} alt={item.title} style={{ maxWidth: '100%', height: 'auto' }} />
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
-                        <p>Price: {item.price}</p>
+                        <p>{item.price}</p>
                         <button
                             className={`add-to-cart-btn ${isInCart(item.id) ? 'in-cart' : ''}`}
                             onClick={() => isInCart(item.id) ? removeFromCart(item.id) : addToCart(item)}
